@@ -1,7 +1,7 @@
 
-print("hello ondevice")
+print("hello world")
 print("hi")
-print("hello practice")
+print("hello world")
 
 
 print('Hi Master')
