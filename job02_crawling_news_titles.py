@@ -10,26 +10,27 @@ category= ['Politics','Economics','Social','Culture','World','IT']
 
 options = ChromeOptions()
 options.add_argument('lang=ko_KR')
-options.add_argument('headless')
+# options.add_argument('headless')
 
 service = ChromeService(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
-my_section = 3 #0:POlitics, 1:Economic, 2:Social ,3:Culture ,4:World ,5: IT
+my_section = 2 #0:POlitics, 1:Economic, 2:Social ,3:Culture ,4:World ,5: IT
 url = 'https://news.naver.com/section/10{}'.format(my_section)
 driver.get(url)
 
 
 button_xpath = '//*[@id="newsct"]/div[4]/div/div[2]'
-# for i in range(10):
-#     time.sleep(0.5)
-#     driver.find_element(By.XPATH, button_xpath).click()
+for i in range(70):
+    time.sleep(0.5)
+    driver.find_element(By.XPATH, button_xpath).click()
 
-while True:
-    try:
-        button_xpath = '//*[@id="newsct"]/div[4]/div/div[2]'
-        driver.find_element(By.XPATH, button_xpath).click()
-    except:
-        break
+# while True:
+#     try:
+#         button_xpath = '//*[@id="newsct"]/div[5]/div/div[2]'
+#         driver.find_element(By.XPATH, button_xpath).click()
+#
+#     except:
+#         break
 time.sleep(1)
 
 titles_tags = driver.find_elements(By.CLASS_NAME, 'sa_text_strong')
@@ -46,4 +47,3 @@ df_titles.to_csv('news_titles_{}.csv'.format(category[my_section]))
 
 
 time.sleep(5)
-
