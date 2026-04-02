@@ -18,7 +18,7 @@ for i in range(6):
     print(titles)
     df_section_titles = pd.DataFrame(titles,columns=['title'])
     df_section_titles['category'] = category[i]
-    df_titles = pd.concat([df_titles,df_section_titles],ignore_index=True)
+    df_titles = pd.concat([df_titles,df_section_titles], ignore_index=True)
 print(df_titles.head())
 print(df_titles.info())
 print(df_titles['category'].value_counts())

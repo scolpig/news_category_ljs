@@ -42,7 +42,7 @@ df_titles = pd.DataFrame(titles,columns=['title'])
 df_titles['category'] = category[my_section]
 print(df_titles.head())
 df_titles.info()
-df_titles.to_csv('news_titles_{}.csv'.format(category[my_section]))
+df_titles.to_csv('news_titles_{}.csv'.format(category[my_section]), index=False)
 
 
 
