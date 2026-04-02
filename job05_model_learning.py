@@ -2,9 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from keras.models import *
 from keras.layers import *
-import os
-
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+# import os
+#
+# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 x_train = np.load('./dataset/title_x_train_wordsize13613.npy', allow_pickle=True)
 y_train = np.load('./dataset/title_y_train_wordsize13613.npy', allow_pickle=True)
